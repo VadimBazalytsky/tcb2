@@ -1,0 +1,487 @@
+*
+    font-family: 'Roboto', sans-serif
+    margin: 0
+    // transition: .4s all
+
+@mixin header-text
+    font-weight: 300
+    font-size: 35px
+    line-height: 40px
+    text-align: center
+    color: #1B2A31
+    margin-top: 60px
+
+   
+@mixin subheader_text
+    font-weight: 300
+    font-size: 16px
+    text-align: justify
+    color: #536773
+
+@mixin read_more_btn
+    width: 180px
+    height: 36px
+    background: #536773
+    border: none
+    color: #FFFFFF
+    font-weight: 300
+    font-size: 14px
+    transition: .4s all
+    &:hover
+        background: #ABDB51
+    &:active
+        background: #51db5d
+
+@mixin carusel_btn()
+    background: #ABDB51
+    width: 43px
+    height: 43px
+    border-radius: 3px
+    position: absolute
+    top: 50%;
+    transform: translateY(50%)
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 14px
+    color: #ffffff
+    &:hover
+        background: #ffffff
+        color: #ABDB51
+        border: 2px solid #ABDB51
+    &:active
+        content: ''
+        background: #ABDB51
+        color: #ffffff  
+
+header
+    height: 600px
+    background: url('../img/backgnd.png') center center / cover no-repeat
+    position: relative
+
+
+    nav 
+        width: 100%
+        height: 50px
+       
+        z-index: 2;
+
+    .menu 
+        display: flex
+        justify-content: space-between
+        padding: 30px 268px
+        margin: 0
+        list-style-type: none
+        
+            
+    .menu_item 
+        font-weight: 300
+        font-size: 12px
+        text-align: center
+        text-transform: uppercase
+        padding-left: 64px
+        
+        &:nth-child(5)
+            padding-left: 210px
+        &:nth-child(n+6)
+            padding-left: 24px
+        
+    .menu_link
+        color: #1B2A31
+        &:hover
+            // border: 2px solid red
+            // background-color: green
+    
+
+
+
+
+
+.main
+    &_about
+    margin: 67px 0 0 0
+    &_about_header
+            font-weight: 300
+            font-size: 40px
+            line-height: 64px
+    &_about_text
+            font-weight: 300
+            font-size: 16px
+            line-height: 24px
+            color: #536773
+    &_about_button
+        +read_more_btn
+    
+    
+    
+    .box
+        width: 430px
+        height: 438px
+        background: rgba(0, 0, 0, 0.35)
+        padding: 34px 24px 34px 24px
+        position: relative
+
+        .calendar
+            display: block
+            width: 385px
+            min-height: 430px
+            padding: 19px 0
+            background-color: #fff
+            position: absolute
+            top: 79px
+            left: 23px
+            border: 1px solid #A1AEB7
+            border-radius: 2p
+            z-index: 5
+            &_btn
+                display: block
+                background: #ABDB51
+                border: none
+                width: 32px
+                height: 32px
+                position: absolute
+                color: #ffffff
+                font-size: 10px
+            .last
+                left: 13px
+
+            .next
+                right: 13px
+        
+            &_header
+                display: flex
+                justify-content: space-around
+                font-weight: 300
+                font-size: 10px
+                color: #5A5A5A
+                margin-top: 15px
+                padding: 0 25px
+                
+            .year
+                font-size: 16px
+                line-height: 18px
+                text-align: center
+                color: #5A5A5A
+                font-weight: 900
+                
+            .month
+                font-size: 14px
+                line-height: 18px
+                text-align: center
+                font-weight: 400
+            &_week
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding: 0 25px
+
+            &_day
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 52px
+                height: 52px
+                // border: 1px solid green
+                &:hover
+                    background: #F1F1F3
+                    border-radius: 3px
+            .choose_date
+                padding: 0
+                display: block
+                margin: 26px auto 0
+                width: 355px
+                height: 44px
+                background: #ABDB51
+                border: 0
+                border-radius: 3px
+                &:hover
+                    background: green
+
+    .choose
+        display: flex
+        justify-content: space-between
+        align-content: flex-start
+        flex-wrap: wrap
+        &_header
+            font-weight: 300
+            font-size: 30px
+            color: #FFFFFF
+            text-align: center
+        &_btn
+            width: 186px
+            height: 30px
+            background: #FFFFFF
+            border: 1px solid #A1AEB7
+            box-sizing: border-box
+            border-radius: 3px
+            font-weight: 300
+            font-size: 12px
+            line-height: 16px
+            color: #5A5A5A
+            display: flex
+            align-items: center
+            margin-bottom: 38px
+
+        /** .test
+            display: none  
+            position: absolute
+            width: 385px
+            height: 430px
+            left: 0px
+            top: 24px
+            background-color: red   **/  
+
+
+        .date
+            cursor: pointer
+            position: relative
+            margin-top: 24px
+            padding-left: 35px
+            transition: .4s all
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                top: 6px
+                left: 14px
+                width: 12px
+                height: 12px
+                background: url('../ico/date.png') center center/cover no-repeat
+            &:active
+                content: ''
+                background: #ABDB51
+        
+        .category
+            cursor: pointer
+            padding-left: 13px
+            
+            &::after
+                content: ''
+                width: 11px
+                height: 11px
+                background: url('../ico/up.png') center center/cover no-repeat
+                margin-left: 100px
+            &:active
+                content: ''
+                background: #ABDB51
+        
+        .money
+            width: 90px
+            font-weight: 300
+            font-size: 12px
+            padding-left: 13px
+           
+                
+        &_serch
+            display: block
+            width: 224px
+            height: 40px
+            background: #ABDB51
+            border-radius: 2px
+            border: none
+            margin: 0 auto
+            margin-top: 94px
+            &:active
+                content: ''
+                background: #5A5A5A
+
+        &_text
+            font-size: 12px
+            line-height: 14px
+            text-align: center
+            color: #ABDB51
+            margin-top: 8px
+            
+
+
+
+.upcoming
+    height: 640px
+    .carusel
+     
+    .container  
+        position: relative
+
+    &_header
+        @include header-text
+
+    &_text
+       @include subheader_text
+    &_img
+        display: block
+        width: 360px
+        height: 270px
+        margin-top: 15px
+
+    .carusel_btn
+        +carusel_btn
+    .right
+        right: -83px
+
+    .left
+        left: -83px
+
+.about
+    height: 230px
+    
+
+    &_header
+        @include header-text
+
+    &_text
+        @include subheader_text    
+              
+    .fact
+        position: relative
+        margin: 0
+        padding: 0
+        margin-top: 53px
+        margin-left: 74px
+        &_ico
+            position: absolute
+            left: -74px
+            top: -10px
+
+        &_block
+            
+            display: flex
+            align-items: center
+        &_header
+            font-size: 25px
+            color: #1B2A31 
+        &_text
+            font-weight: 300
+            font-size: 14px
+            color: #536773
+
+.about_club
+    height: 230px
+    &_header
+        @include header-text
+        padding-top: 30px
+    &_text
+        @include subheader_text
+    &_read_more_button
+        +read_more_btn
+        display: block
+        margin: 46px auto 0
+
+.reviews
+    height: 800px
+    background-color: #F1F1F3
+    .container
+        position: relative
+    &_header
+        +header-text
+        padding-top: 80px
+    &_block
+        margin: 40px 0 0 0
+        
+    &_plate
+        padding-top: 60px
+        margin: 0 auto
+        width: 350px
+        height: 487px
+        background-color: #fff
+        border-radius: 2px
+
+    &_img
+        display: block
+        width: 123px
+        height: 123px
+        border-radius: 100%
+        margin: 0 auto 0
+        flex-shrink: 0
+    &_name
+        font-weight: 300
+        font-size: 25px
+        text-align: center
+        color: #1B2A31
+        padding: 36px 0 0 0
+    &_job_title
+        font-weight: 300
+        font-size: 16px
+        text-align: center
+        color: #536773
+        padding: 10px 0 0 0;
+    &_text
+        text-align: justify
+        padding: 30px
+    .up_btn
+        border: none
+        position: absolute
+        right: -80px
+        bottom: 0
+        width: 43px
+        height: 43px
+        background: url('..//ico/up button.svg') center center/cover no-repeat
+        &:active
+            content: ''
+            background-color: #F2BC38
+    &_btn
+        +carusel_btn
+
+    .right
+        right: -83px
+
+    .left
+        left: -83px
+
+.footer
+    height: 200px
+    background: url('../img/footer.png') center center/cover no-repeat
+    .container
+        position: relative
+        
+    &_ico
+        position: absolute
+        top: 68px
+        
+    &_header
+        margin-top: 27px
+        color: #A1AEB7
+        font-weight: 300
+        font-size: 16px
+    &_text
+        font-weight: 300
+        font-size: 12px
+        color: #FFFFFF
+        padding-left: 30px
+        padding-top: 15px
+        
+    .sm
+        transform: translateX(-20px) translateY(-24px)
+        list-style-type: none
+        display: flex
+        justify-content: space-between
+        &:hover
+            box-shadow: 0 0 5px #fff
+        &_itm
+            cursor: pointer 
+            display: block
+           
+
+
+
+        
+            
+        
+
+
+            
+        
+
+
+
+       
+                    
+            
+
+
+        
+
+
+
+
+
+      
